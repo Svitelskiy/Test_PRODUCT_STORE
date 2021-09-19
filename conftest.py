@@ -23,3 +23,30 @@ def random_data():
 def user():
     return {"login": random_data(),
             "password": random_data()}
+
+
+@pytest.fixture(scope="function")
+def contact_message_data():
+    return {
+        "contact_email": "kumis@gmail.com",
+        "contact_name": "Petro1234",
+        "message": "test to fill message"
+    }
+
+
+@pytest.fixture(scope="function")
+def test_creds():
+    return {"login": "Sobaka",
+            "password": "Qwe123qwer"}
+
+
+@pytest.fixture(scope="function")
+def order_info():
+    return {
+        "name": "Kosta Lacosta",
+        "country": "Ukraine",
+        "city": "Lypivka",
+        "credit_card": "1233 4112 5123 5214",
+        "month": "02",
+        "year": "2023"
+    }
