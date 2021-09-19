@@ -1,4 +1,3 @@
-import time
 from pages.main_page import DemoMainPage
 from pages.login_page import LoginPage
 from pages.sign_page import SignUpPage
@@ -14,4 +13,5 @@ def test_login_into_account(browser, user):
 
     main_page.navigate_to_login_page()
     LoginPage(browser).enter_valid_credentials(login=user["login"], password=user["password"])
-    time.sleep(10)
+    wait_for_element_be_located(browser, 10, "ID", "nameofuser")
+    assert DemoMainPage(browser, registered=True).welcome_label.text == f"Welcome {user['login']}"
