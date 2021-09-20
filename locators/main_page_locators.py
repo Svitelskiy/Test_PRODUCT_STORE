@@ -15,7 +15,6 @@ class DemoMainPageLocators:
     CART_BUTTON = (By.CSS_SELECTOR, "#cartur")
 
 
-
 @dataclass
 class DemoCategoryLocators:
     PHONES_BUTTON = (By.XPATH, "//a[.='Phones']")
